@@ -1,0 +1,223 @@
+# Agent Best Practices (Cursor) — Editable Notes
+
+---
+
+## 1. Understanding Agent Harnesses
+
+### What it means:
+
+* Instructions → rules + system prompt
+* Tools → file edit, terminal, search
+* User messages → prompts
+
+### Key Insight:
+
+* Different models behave differently
+* Focus on instructions + context
+
+### Notes:
+
+---
+
+## 2. Start With Plans
+
+### Why:
+
+* Planning improves output quality
+
+### Flow:
+
+1. Scan codebase
+2. Ask questions
+3. Create plan
+4. Approve plan
+
+### Rule:
+
+Plan → Approve → Execute
+
+### Notes:
+
+---
+
+## 3. Including Images
+
+### Use cases:
+
+* UI debugging
+* Design to code
+
+### Notes:
+
+---
+
+## 4. Common Workflows
+
+### 4.1 Test-Driven Development (TDD)
+
+### Flow:
+
+1. Write tests
+2. Tests fail
+3. Implement code
+4. Iterate until pass
+
+### Notes:
+
+---
+
+### 4.2 Codebase Understanding
+
+### Use cases:
+
+* Understand architecture
+* Debug logic
+
+### Notes:
+
+---
+
+### 4.3 Git Workflows
+
+### Examples:
+
+* Auto commit
+* PR creation
+
+### Notes:
+
+---
+
+## 5. Delegating to Cloud Agents
+
+### Use cases:
+
+* Refactoring
+* Test generation
+* Documentation
+
+### Notes:
+
+---
+
+## 6. Debug Mode
+
+### Steps:
+
+1. Create hypotheses
+2. Add logs
+3. Collect data
+4. Find root cause
+5. Fix issue
+
+### Notes:
+
+---
+
+## 7. Managing Context
+
+### 7.1 Let Agent Find Context
+
+* Avoid adding too many files
+
+### Notes:
+
+---
+
+### 7.2 When to Start New Conversation
+
+### Start new when:
+
+* New feature
+* Agent confused
+* Task done
+
+### Notes:
+
+---
+
+### 7.3 Reference Past Work
+
+### Use:
+
+* @Past Chats
+
+### Notes:
+
+---
+
+## 8. Extending the Agent
+
+### 8.1 Rules
+
+### Use for:
+
+* Coding style
+* Project structure
+
+### Notes:
+
+---
+
+### 8.2 Skills
+
+### Use for:
+
+* Custom workflows
+* Commands
+
+### Notes:
+
+---
+
+### 8.3 Long-running Agent Loop
+
+### Use for:
+
+* Automation tasks
+
+### Notes:
+
+---
+
+## 9. Reviewing Code
+
+### Steps:
+
+* Review during generation
+* Use issue finder
+* Review PRs
+
+### Notes:
+
+---
+
+## 10. Running Agents in Parallel
+
+### 10.1 Worktrees
+
+* Isolated environments
+
+### 10.2 Multiple Models
+
+* Compare outputs
+
+### Notes:
+
+---
+
+## 11. Developer Mindset
+
+### Key Points:
+
+* Write specific prompts
+* Iterate setup
+* Review carefully
+* Use verifiable goals
+* Treat agent as collaborator
+
+### Notes:
+
+---
+
+# Your Custom Additions
