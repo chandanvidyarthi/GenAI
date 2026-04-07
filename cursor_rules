@@ -1,0 +1,219 @@
+# Cursor Rules – Complete Reference Guide
+
+This document summarizes all four rule types in Cursor and provides editable templates.
+
+---------------------------------------------------------------------------------
+
+# 1. ALWAYS RULES
+
+## Definition
+
+Always rules are automatically included in every AI prompt. They act as global constraints.
+
+## When to Use
+
+* Enforcing architecture (e.g., MVVM)
+* Coding standards
+* Non-negotiable constraints
+
+## Example Template
+
+```md
+---
+type: always
+---
+
+- Use MVVM architecture
+- Use Kotlin for Android development
+- Follow clean architecture principles
+```
+
+---------------------------------------------------------------
+
+# 2. AUTO ATTACHED RULES
+
+## Definition
+
+These rules are automatically applied when specific files (via glob patterns) are used.
+
+## When to Use
+
+* File-specific logic
+* Module-based rules
+* Platform-specific behavior
+
+## Example Template
+
+```md
+---
+type: auto-attached
+globs: *.kt
+---
+
+- Use Kotlin best practices
+- Avoid null pointer exceptions
+- Prefer coroutines over callbacks
+```
+
+## Example (Android TV)
+
+```md
+---
+type: auto-attached
+globs: tv/**
+---
+
+- Ensure proper D-pad navigation
+- Handle focus states explicitly
+- Use focusable modifiers
+```
+
+---------------------------------------------------------------
+
+
+# 3. AGENT REQUESTED RULES
+
+## Definition
+
+These rules are optionally used by the AI when relevant. The AI decides based on the description.
+
+## Key Requirement
+
+A strong, clear description is mandatory.
+
+## When to Use
+
+* Reusable logic
+* Optional workflows
+* Domain-specific guidance
+
+## Example Template
+
+```md
+---
+type: agent-requested
+description: Use when creating API services in Android using Retrofit and Coroutines.
+---
+
+- Use Retrofit interfaces
+- Use suspend functions
+- Handle errors properly
+- Return Result or Response
+```
+
+## Example (ViewModel)
+
+```md
+---
+type: agent-requested
+description: Use when creating or modifying ViewModel in Android using MVVM and StateFlow.
+---
+
+- Use StateFlow for UI state
+- Expose immutable state
+- Use viewModelScope for coroutines
+- Avoid holding context
+```
+
+---------------------------------------------------------------
+
+# 4. MANUAL RULES
+
+## Definition
+
+These rules are applied only when explicitly referenced using @ruleName.
+
+## When to Use
+
+* One-time workflows
+* Special templates
+* Debugging or migrations
+
+## Example Template
+
+```md
+---
+type: manual
+name: generate-compose-ui
+---
+
+- Create reusable composables
+- Follow Material design
+- Keep UI stateless where possible
+```
+
+## Usage Example
+
+```
+@generate-compose-ui
+```
+
+---
+
+# COMPARISON SUMMARY
+
+| Rule Type       | Trigger              | Control | Predictability |
+| --------------- | -------------------- | ------- | -------------- |
+| Always          | Always active        | High    | Very High      |
+| Auto Attached   | File pattern match   | Medium  | High           |
+| Agent Requested | AI decides           | Low     | Medium         |
+| Manual          | Explicit (@ruleName) | Full    | Very High      |
+
+---
+
+# BEST PRACTICES
+
+* Use Always for strict rules
+* Use Auto Attached for file-based behavior
+* Use Agent Requested for reusable intelligence
+* Use Manual for explicit workflows
+
+---
+
+# YOUR CUSTOM RULES SECTION (EDIT BELOW)
+
+## Add your project-specific rules here
+
+```md
+---
+type: always
+---
+
+# Your rules...
+```
+
+```md
+---
+type: agent-requested
+description:
+---
+
+# Your rules...
+```
+
+```md
+---
+type: auto-attached
+globs:
+---
+
+# Your rules...
+```
+
+```md
+---
+type: manual
+name:
+---
+
+# Your rules...
+```
+
+---
+
+# NOTES
+
+* Keep rules focused and modular
+* Avoid overly large rules
+* Write clear descriptions for Agent Requested rules
+* Test and refine based on AI behavior
