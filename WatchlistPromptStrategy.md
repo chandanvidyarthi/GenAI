@@ -4,7 +4,7 @@
 
 ---
 
-## 1. Feature breakdown — six AI-sized tasks (build order)
+## 1. Feature breakdown 
 
 1. **Types and API layer** — `WatchlistItem` shapes and `watchlistClient.get/add/remove` in `src/api/watchlistClient.ts`, matching the backend contract.
 
